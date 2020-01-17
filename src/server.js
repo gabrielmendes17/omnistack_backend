@@ -10,7 +10,8 @@ class App {
   constructor () {
     mongoose.connect(DATA_BASE_CONFIG.url, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useCreateIndex: true,
     });
     this.express = express()
     this.isDev = process.env.NODE_ENV !== 'production'
