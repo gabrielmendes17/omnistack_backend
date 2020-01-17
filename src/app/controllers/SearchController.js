@@ -1,10 +1,10 @@
 import Dev from '../models/Dev';
+import util  from '../utils/ParseStringArray';
 
 class SearchController {
     async index(request, response) {
         const { latitude, longitude, techs } = request.body;
-        console.log(request.body);
-        const techsArray = techs.split(',').map(t => t.trim());
+        const techsArray = util.parseStringAsArray(techs);
         const dev = await Dev.find({
             techs: {
                 $in: techsArray
