@@ -5,6 +5,7 @@ import testeController from './app/controllers/TestController';
 const routes = new Router();
 
 routes.get('/teste', testeController.teste)
-routes.post('/devs', devController.teste)
+routes.post('/devs', devController.store)
+routes.get('/devs', devController.index)
 
 export default routes;
